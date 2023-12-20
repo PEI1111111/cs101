@@ -2,12 +2,22 @@
 
 int main()
 {
- int c;
- for(c = 1; c <= 72; ++c){
-     int i = (c-1)/9+2;
-     int j =(c-1)%9+1;
-     printf("%d*%d=%d\t", i, j, i*j);
- }
- printf("\n");
+    int x =1;
+    int y =1;
+    int i;
+    for ( i=1; i<=81 ; i++) {
+        if (y<=9) {
+            if (x<9) {
+                printf("%d*%d=%d\t",y,x,y*x);
+                x = x+1;
+            }
+            else {
+                printf("%d*%d=%d\n",y,x,y*x);
+                y = y+1;
+                x = 1;
+            }
+        }
+    }
+
     return 0;
 }

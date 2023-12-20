@@ -1,16 +1,30 @@
 #include <stdio.h>
-int main(){
-   int n = 7;
-   int spc = n;
-   for(int i = 1; i <= n; i++){
-   for(int k = spc; k >= 1;k--){
-     printf(" ");
-   }
-      for(int j = 1;j <= i;j++){
-       printf("%d ", i);
-   }
-       printf("\n");
-       spc--;
-   }
-   return 0;
+
+int main()
+{
+    int n=7;
+    int rows;
+    int pos;
+    int num;
+    int x;
+    
+    for (rows=1; rows<=n; rows++){
+        x = n+1-rows;
+        num = rows;
+        
+        for (pos=1 ; pos <= n*2 ; pos++) {
+            if (pos == x && num > 0){
+                printf("%d", rows);
+                x = x+2;
+                num = num-1;
+            }
+            else {
+                printf(" ");
+            }
+        }
+    
+        printf("\n");
+    }
+
+    return 0;
 }
